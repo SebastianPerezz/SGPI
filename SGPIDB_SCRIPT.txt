@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [SGPIDB]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Database [SGPIDB]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 CREATE DATABASE [SGPIDB]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -80,7 +80,7 @@ ALTER DATABASE [SGPIDB] SET QUERY_STORE = OFF
 GO
 USE [SGPIDB]
 GO
-/****** Object:  Table [dbo].[Asignatura]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Asignatura]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -98,7 +98,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Documento]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Documento]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -112,7 +112,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Entrevista]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Entrevista]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -128,7 +128,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Estudiante]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Estudiante]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -145,7 +145,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Genero]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Genero]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -159,7 +159,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Homologacion]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Homologacion]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -168,7 +168,7 @@ CREATE TABLE [dbo].[Homologacion](
 	[IdHomologacion] [int] IDENTITY(1,1) NOT NULL,
 	[IdEstudiante] [int] NOT NULL,
 	[IdPrograma] [int] NOT NULL,
-	[IdTipoHomolo] [int] NOT NULL,
+	[IdTipoHomologacion] [int] NOT NULL,
 	[PeriodoAcademico] [varchar](30) NOT NULL,
 	[IdAsignatura ] [int] NOT NULL,
 	[CodigoHomologacion] [varchar](30) NOT NULL,
@@ -181,7 +181,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Pagos]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Pagos]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -197,7 +197,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Programa]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Programa]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -211,7 +211,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Programacion]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Programacion]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -230,7 +230,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Rol]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[Rol]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -244,7 +244,21 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuario]    Script Date: 3/10/2022 1:48:54 p. m. ******/
+/****** Object:  Table [dbo].[TipoHomologacion]    Script Date: 10/10/2022 1:50:18 p. m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[TipoHomologacion](
+	[IdTipoHomologacion] [int] IDENTITY(1,1) NOT NULL,
+	[TipoHomologacion] [varchar](100) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[IdTipoHomologacion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Usuario]    Script Date: 10/10/2022 1:50:18 p. m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -268,7 +282,88 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+ALTER TABLE [dbo].[Asignatura]  WITH CHECK ADD  CONSTRAINT [FK_Asignatura_Programa] FOREIGN KEY([IdPrograma])
+REFERENCES [dbo].[Programa] ([IdPrograma])
+GO
+ALTER TABLE [dbo].[Asignatura] CHECK CONSTRAINT [FK_Asignatura_Programa]
+GO
+ALTER TABLE [dbo].[Entrevista]  WITH CHECK ADD  CONSTRAINT [FK_Entrevista_Estudiante] FOREIGN KEY([IdEstudiante])
+REFERENCES [dbo].[Estudiante] ([IdEstudiante])
+GO
+ALTER TABLE [dbo].[Entrevista] CHECK CONSTRAINT [FK_Entrevista_Estudiante]
+GO
+ALTER TABLE [dbo].[Entrevista]  WITH CHECK ADD  CONSTRAINT [FK_Entrevista_Usuario] FOREIGN KEY([IdUsuario])
+REFERENCES [dbo].[Usuario] ([IdUsuario])
+GO
+ALTER TABLE [dbo].[Entrevista] CHECK CONSTRAINT [FK_Entrevista_Usuario]
+GO
+ALTER TABLE [dbo].[Estudiante]  WITH CHECK ADD  CONSTRAINT [FK_Estudiante_Pagos] FOREIGN KEY([IdPago])
+REFERENCES [dbo].[Pagos] ([IdPago])
+GO
+ALTER TABLE [dbo].[Estudiante] CHECK CONSTRAINT [FK_Estudiante_Pagos]
+GO
+ALTER TABLE [dbo].[Estudiante]  WITH CHECK ADD  CONSTRAINT [FK_Estudiante_Usuario] FOREIGN KEY([IdUsuario])
+REFERENCES [dbo].[Usuario] ([IdUsuario])
+GO
+ALTER TABLE [dbo].[Estudiante] CHECK CONSTRAINT [FK_Estudiante_Usuario]
+GO
+ALTER TABLE [dbo].[Homologacion]  WITH CHECK ADD  CONSTRAINT [FK_Homologacion_Asignatura] FOREIGN KEY([IdAsignatura ])
+REFERENCES [dbo].[Asignatura] ([IdAsignatura])
+GO
+ALTER TABLE [dbo].[Homologacion] CHECK CONSTRAINT [FK_Homologacion_Asignatura]
+GO
+ALTER TABLE [dbo].[Homologacion]  WITH CHECK ADD  CONSTRAINT [FK_Homologacion_Estudiante] FOREIGN KEY([IdEstudiante])
+REFERENCES [dbo].[Estudiante] ([IdEstudiante])
+GO
+ALTER TABLE [dbo].[Homologacion] CHECK CONSTRAINT [FK_Homologacion_Estudiante]
+GO
+ALTER TABLE [dbo].[Homologacion]  WITH CHECK ADD  CONSTRAINT [FK_Homologacion_Programa] FOREIGN KEY([IdPrograma])
+REFERENCES [dbo].[Programa] ([IdPrograma])
+GO
+ALTER TABLE [dbo].[Homologacion] CHECK CONSTRAINT [FK_Homologacion_Programa]
+GO
+ALTER TABLE [dbo].[Homologacion]  WITH CHECK ADD  CONSTRAINT [FK_Homologacion_TipoHomologacion] FOREIGN KEY([IdTipoHomologacion])
+REFERENCES [dbo].[TipoHomologacion] ([IdTipoHomologacion])
+GO
+ALTER TABLE [dbo].[Homologacion] CHECK CONSTRAINT [FK_Homologacion_TipoHomologacion]
+GO
+ALTER TABLE [dbo].[Programacion]  WITH CHECK ADD  CONSTRAINT [FK_Programacion_Asignatura] FOREIGN KEY([IdAsignatura])
+REFERENCES [dbo].[Asignatura] ([IdAsignatura])
+GO
+ALTER TABLE [dbo].[Programacion] CHECK CONSTRAINT [FK_Programacion_Asignatura]
+GO
+ALTER TABLE [dbo].[Programacion]  WITH CHECK ADD  CONSTRAINT [FK_Programacion_Programa] FOREIGN KEY([IdPrograma])
+REFERENCES [dbo].[Programa] ([IdPrograma])
+GO
+ALTER TABLE [dbo].[Programacion] CHECK CONSTRAINT [FK_Programacion_Programa]
+GO
+ALTER TABLE [dbo].[Programacion]  WITH CHECK ADD  CONSTRAINT [FK_Programacion_Usuario] FOREIGN KEY([IdUsuario])
+REFERENCES [dbo].[Usuario] ([IdUsuario])
+GO
+ALTER TABLE [dbo].[Programacion] CHECK CONSTRAINT [FK_Programacion_Usuario]
+GO
+ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD  CONSTRAINT [FK_Usuario_Documento] FOREIGN KEY([IdDoc])
+REFERENCES [dbo].[Documento] ([idDoc])
+GO
+ALTER TABLE [dbo].[Usuario] CHECK CONSTRAINT [FK_Usuario_Documento]
+GO
+ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD  CONSTRAINT [FK_Usuario_Genero] FOREIGN KEY([IdGenero])
+REFERENCES [dbo].[Genero] ([IdGenero])
+GO
+ALTER TABLE [dbo].[Usuario] CHECK CONSTRAINT [FK_Usuario_Genero]
+GO
+ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD  CONSTRAINT [FK_Usuario_Programa] FOREIGN KEY([IdPrograma])
+REFERENCES [dbo].[Programa] ([IdPrograma])
+GO
+ALTER TABLE [dbo].[Usuario] CHECK CONSTRAINT [FK_Usuario_Programa]
+GO
+ALTER TABLE [dbo].[Usuario]  WITH CHECK ADD  CONSTRAINT [FK_Usuario_Rol] FOREIGN KEY([IdRol])
+REFERENCES [dbo].[Rol] ([IdRol])
+GO
+ALTER TABLE [dbo].[Usuario] CHECK CONSTRAINT [FK_Usuario_Rol]
+GO
 USE [master]
 GO
 ALTER DATABASE [SGPIDB] SET  READ_WRITE 
 GO
+
