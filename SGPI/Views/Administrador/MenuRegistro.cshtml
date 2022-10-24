@@ -1,4 +1,4 @@
-﻿
+﻿@model Usuario
 @{
     ViewData["Title"] = "MenuRegistro";
     Layout = "_LayoutSGPI";
@@ -15,7 +15,7 @@
         <div class="bus">
             <div class="cont1">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label for="identificacion">Tipo Identificación</label>
                         <select name="identificacion" id="identificacion">
                             <option value="Cedula Ciudadania">Cedula Ciudadania</option>
@@ -24,13 +24,17 @@
                             <option value="Pasaporte">Pasaporte</option>
                         </select>
                     </div>
-                    <div class="col-md-4">
-                        <label for="name">Nombre</label>
-                        <input type="text" name="nombre" />
+                    <div class="col-md-3">
+                        <label for="name">Primer Nombre</label>
+                        <input asp-for = "PrimerNombre" type="text" />
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <label for="name">Segundo Nombre</label>
+                        <input asp-for = "SegundoNombre" type="text" />
+                    </div>
+                    <div class="col-md-3">
                         <label for="priApel">Primer Apellido</label>
-                        <input type="text" name="priApel" />
+                        <input asp-for = "PrimerApellido" type="text" />
                     </div>
                 </div>
             </div>
@@ -38,15 +42,15 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label for="segApel">Segundo Apellido</label>
-                        <input type="text" name="segApel" />
+                        <input asp-for = "SegundoApellido" type="text" />
                     </div>
                     <div class="col-md-4">
                         <label for="doc">Número de Documento</label>
-                        <input type="text" name="numDoc" />
+                        <input asp-for = "NumeroDocumento" type="text" />
                     </div>
                     <div class="col-md-4">
                         <label for="email">Correo</label>
-                        <input type="email" name="email" />
+                        <input asp-for = "Email" type="email" />
                     </div>
                 </div>
             </div>
@@ -70,7 +74,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="pass">Contraseña</label>
-                        <input type="text" name="pass" />
+                        <input asp-for = "Password" type="text" />
                     </div>
                 </div>
             </div>
