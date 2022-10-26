@@ -1,4 +1,5 @@
-﻿
+﻿@model Usuario
+
 @{
     ViewData["Title"] = "Reportes";
     Layout = "_LayoutSGPI";
@@ -28,10 +29,10 @@
                     </div>
                     <div class="col-md-4">
                         <label for="doc">Número de Documento</label>
-                        <input type="text" name="numDoc" />
+                        <input asp-for = "NumeroDocumento" type="text" />
                     </div>
                     <div class="col-md-4">
-                        <input type="submit" name="buscar" value="Buscar" class="buscar-submit" />
+                        <input  type="submit" name="buscar" value="Buscar" class="buscar-submit" />
                     </div>
                 </div>
             </div>

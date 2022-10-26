@@ -17,26 +17,26 @@ namespace SGPI.Controllers
 
             if (usuario != null)
             {
-                if (usuario.IdRol == 1) 
+                if (usuario.IdRol == 1)
                 {
                     //Redirige a la vista principal de Administrador
                     return View("MenuAdmBuscar");
                 }
-                    
-                else if (usuario.IdRol == 2) 
+
+                else if (usuario.IdRol == 2)
                 {
                     //Redirige a la vista principal de Coordinador
                     return Redirect("Coordinador/MenuCoordinadorBuscar");
                 }
-                    
-                else if (usuario.IdRol == 3) 
+
+                else if (usuario.IdRol == 3)
                 {
                     //Redirige a la vista de Estudiante
                     return Redirect("Estudiante/ActualizarEstudiante");
                 }
                 else {
                 }
-            } 
+            }
 
             return View();
         }
@@ -74,14 +74,48 @@ namespace SGPI.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult CreaMenuRegistro(Usuario usuario)
+        {
+            context.Usuarios.Add(usuario);
+            context.SaveChanges();
+            ViewBag.genero = context.Generos.ToList();
+            ViewBag.rol = context.Rols.ToList();
+            ViewBag.documento = context.Documentos.ToList();
+            ViewBag.programa = context.Programas.ToList();
+            return View();
+        }
+
         public IActionResult MenuRegistro()
         {
+            ViewBag.genero = context.Generos.ToList();
+            ViewBag.rol = context.Rols.ToList();
+            ViewBag.documento = context.Documentos.ToList();
+            ViewBag.programa = context.Programas.ToList();
+
             return View();
         }
 
         public IActionResult MenuAdmBuscar()
         {
+            ViewBag.documento = context.Documentos.ToList();
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult MenuAdmBuscar(Usuario usuario)
+        {
+            var us = context.Usuarios
+                .Where(u => u.NumeroDocumento == usuario.NumeroDocumento
+                && usuario.IdDoc == usuario.IdDoc).FirstOrDefault();
+
+            if(us!= null)
+                return View(us);
+            else
+            {
+                ViewBag.documento = context.Documento.Tolist();
+                return View();
+            }
         }
 
         public IActionResult MenuAdmModificar()
