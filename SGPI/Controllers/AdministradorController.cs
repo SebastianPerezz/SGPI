@@ -20,7 +20,7 @@ namespace SGPI.Controllers
                 if (usuario.IdRol == 1)
                 {
                     //Redirige a la vista principal de Administrador
-                    return View("MenuAdmBuscar");
+                    return Redirect("Administrador/MenuAdmBuscar");
                 }
 
                 else if (usuario.IdRol == 2)
@@ -43,29 +43,6 @@ namespace SGPI.Controllers
 
         public IActionResult Login()
         {
-
-            //Genero genero = new Genero();
-            //genero.Genero1 = "LGTBI";
-
-            //context.Add(genero);
-            //context.SaveChanges();
-
-            //var gen = (from s in context.Generos 
-            //           where s.IdGenero == 1 
-            //           select s); 
-            ////pruebsa
-
-
-            //Genero nuevoGen = gen.SingleOrDefault();
-
-            //nuevoGen.Genero1 = "Binario";
-
-            //context.Update(nuevoGen);
-            //context.SaveChanges();
-
-            //context.Remove(nuevoGen);
-            //context.SaveChanges();
-
             return View();
         }
 
@@ -75,7 +52,7 @@ namespace SGPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreaMenuRegistro(Usuario usuario)
+        public IActionResult MenuRegistro(Usuario usuario)
         {
             context.Usuarios.Add(usuario);
             context.SaveChanges();
@@ -86,13 +63,17 @@ namespace SGPI.Controllers
             return View();
         }
 
+        public IActionResult Delete()
+        {
+            return View();
+        }
+
         public IActionResult MenuRegistro()
         {
             ViewBag.genero = context.Generos.ToList();
             ViewBag.rol = context.Rols.ToList();
             ViewBag.documento = context.Documentos.ToList();
             ViewBag.programa = context.Programas.ToList();
-
             return View();
         }
 
@@ -109,20 +90,43 @@ namespace SGPI.Controllers
                 .Where(u => u.NumeroDocumento == usuario.NumeroDocumento
                 && usuario.IdDoc == usuario.IdDoc).FirstOrDefault();
 
-            if(us!= null)
+            if (us != null)
+            {
+                ViewBag.documento = context.Documentos.ToList();
                 return View(us);
+            }
             else
             {
-                ViewBag.documento = context.Documento.Tolist();
+                ViewBag.documento = context.Documentos.ToList();
                 return View();
             }
         }
 
-        public IActionResult MenuAdmModificar()
+        public IActionResult MenuAdmModificar(int? IdUsuario)
         {
-            return View();
+            Usuario usuario = context.Usuarios.Find(IdUsuario);
+            if (usuario != null)
+            {
+                return View(usuario);
+            }
+
+            else
+                return Redirect("Administradir/MenuAdmBuscar");
         }
 
+        [HttpPost]
+        public IActionResult MenuAdmModificar(Usuario user)
+        {
+            context.Update(user);
+            context.SaveChanges();
+            return Redirect("Administradir/MenuAdmBuscar");
+        }
+        public IActionResult Delete(Usuario usuario)
+        {
+            context.Remove(usuario);
+            context.SaveChanges();
+            return Redirect("Administradir/MenuAdmBuscar");
+        }
         public IActionResult Reportes()
         {
             return View();

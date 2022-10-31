@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "MenuCoordinadorReportes";
     Layout = "_LayoutSGPI";
 }
@@ -17,25 +16,20 @@
     <div class="cuacenterCTb">
         <div class="busT">
             <div class="cont1">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="identificacion">Tipo Identificación</label>
-
-                        <select name="identificacion" id="identificacion">
-                            <option value="Cedula Ciudadania">Cedula Ciudadania</option>
-                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                            <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                            <option value="Pasaporte">Pasaporte</option>
-                        </select>
+                <form method="post">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="identificacion">Tipo Identificación</label>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="doc">Número de Documento</label>
+                            <input type="text" name="numDoc" />
+                        </div>
+                        <div class="col-md-4">
+                            <input type="submit" name="buscar" value="Buscar" class="buscar-submit" />
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <label for="doc">Número de Documento</label>
-                        <input type="text" name="numDoc" />
-                    </div>
-                    <div class="col-md-4">
-                        <input type="submit" name="buscar" value="Buscar" class="buscar-submit" />
-                    </div>
-                </div>
+                </form>
             </div>
             <div class="cont1">
                 <div class="row">
