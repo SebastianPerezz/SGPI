@@ -63,11 +63,6 @@ namespace SGPI.Controllers
             return View();
         }
 
-        public IActionResult Delete()
-        {
-            return View();
-        }
-
         public IActionResult MenuRegistro()
         {
             ViewBag.genero = context.Generos.ToList();
@@ -107,11 +102,15 @@ namespace SGPI.Controllers
             Usuario usuario = context.Usuarios.Find(IdUsuario);
             if (usuario != null)
             {
+                ViewBag.genero = context.Generos.ToList();
+                ViewBag.rol = context.Rols.ToList();
+                ViewBag.documento = context.Documentos.ToList();
+                ViewBag.programa = context.Programas.ToList();
                 return View(usuario);
             }
 
             else
-                return Redirect("Administradir/MenuAdmBuscar");
+                return Redirect("Administrador/MenuAdmBuscar");
         }
 
         [HttpPost]
@@ -119,13 +118,18 @@ namespace SGPI.Controllers
         {
             context.Update(user);
             context.SaveChanges();
-            return Redirect("Administradir/MenuAdmBuscar");
+
+            ViewBag.genero = context.Generos.ToList();
+            ViewBag.rol = context.Rols.ToList();
+            ViewBag.documento = context.Documentos.ToList();
+            ViewBag.programa = context.Programas.ToList();
+            return Redirect("MenuAdmBuscar");
         }
         public IActionResult Delete(Usuario usuario)
         {
             context.Remove(usuario);
             context.SaveChanges();
-            return Redirect("Administradir/MenuAdmBuscar");
+            return Redirect("MenuAdmBuscar");
         }
         public IActionResult Reportes()
         {

@@ -45,7 +45,7 @@
                             <input asp-for = "NumeroDocumento" type="text" />
                         </div>
                         <div class="col-md-4">
-                            <label for="email">Correo</label>
+                            <label for="email">Correo Electrónico</label>
                             <input asp-for = "Email" type="email" />
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                 <div class="cont1">
                     <div class="row">
                         <div class="col-md-4">
-                            <label for="roll">Roll Usuario</label>
+                            <label for="rol">Rol Usuario</label>
                             @Html.DropDownList("IdRol", new SelectList(ViewBag.rol, "IdRol", "Rol1"))                
                         </div>
                         <div class="col-md-4">
@@ -62,7 +62,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="pass">Contraseña</label>
-                            <input asp-for = "Password" type="text" />
+                            <input asp-for = "Password" type="password" />
                         </div>
                     </div>
                 </div>

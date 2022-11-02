@@ -15,24 +15,20 @@
 
     <div class="cuacenter">
         <div class="bus">
+            <form method="post">
             <div class="cont1">
                 <div class="row">
                     <div class="col-md-4">
                         <label for="identificacion">Tipo Identificación</label>
-                        <select name="identificacion" id="identificacion">
-                            <option value="Cedula Ciudadania">Cedula Ciudadania</option>
-                            <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
-                            <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
-                            <option value="Pasaporte">Pasaporte</option>
-                        </select>
+                        @Html.DropDownList("IdDoc", new SelectList(ViewBag.documento, "IdDoc", "TipoDocumento"))
                     </div>
                     <div class="col-md-4">
                         <label for="name">Primer Nombre</label>
-                        <input asp-for = "PrimerNombre" type="text" />
+                        <input asp-for="PrimerNombre" type="text" />
                     </div>
                     <div class="col-md-4">
                         <label for="name">Segundo Nombre</label>
-                        <input asp-for = "SegundoNombre" type="text" />
+                        <input asp-for="SegundoNombre" type="text" />
                     </div>
                 </div>
             </div>
@@ -40,57 +36,51 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label for="priApel">Primer Apellido</label>
-                        <input asp-for = "PrimerApellido" type="text" />
+                        <input asp-for="PrimerApellido" type="text" />
                     </div>
                     <div class="col-md-4">
                         <label for="segApel">Segundo Apellido</label>
-                        <input asp-for = "SegundoApellido" type="text" name="segApel" />
+                        <input asp-for="SegundoApellido" type="text" />
                     </div>
                     <div class="col-md-4">
                         <label for="doc">Número de Documento</label>
-                        <input asp-for = "NumeroDocumento" type="text" name="numDoc" />
-                    </div>
-                    <div class="col-md-4">
-                        <label for="email">Correo</label>
-                        <input asp-for = "Email" type="email" name="email" />
+                        <input asp-for="NumeroDocumento" type="text"/>
                     </div>
                 </div>
             </div>
             <div class="cont1">
                 <div class="row">
                     <div class="col-md-4">
-                        <label for="roll">Roll Usuario</label>
-                        <select name="roll" id="roll">
-                            <option value="Administrador">Administrador</option>
-                            <option value="Coordinador">Coordinador</option>
-                            <option value="Estudiante">Estudiante</option>
-                        </select>
+                        <label for="email">Correo Electrónico</label>
+                        <input asp-for="Email" type="email"/>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="rol">Rol Usuario</label>
+                        @Html.DropDownList("IdRol", new SelectList(ViewBag.rol, "IdRol", "Rol1"))
                     </div>
                     <div class="col-md-4">
                         <label for="genero">Genero</label>
-                        <select name="genero" id="genero">
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                            <option value="Otro">Otro</option>
-                        </select>
+                        @Html.DropDownList("IdGenero", new SelectList(ViewBag.genero, "IdGenero", "Genero1"))
                     </div>
                 </div>
             </div>
             <div class="cont1">
                 <div class="row">
+                    <div class="col-md-4">
+                        <label for="pass">Contraseña</label>
+                        <input asp-for="Password" type="password" />
+                    </div>
                     <div class="col-md-8">
                         <label for="programa">Programa</label>
-                        <select name="programa" id="programa">
-                            <option value="Especialización en seguridad informatica">Especialización en seguridad informatica</option>
-                            <option value="Maestria en gestión TI">Maestria en gestión TI</option>
-                            <option value="Maestria en medio ambiente">Maestria en medio ambiente</option>
-                        </select>
+                        @Html.DropDownList("IdPrograma", new SelectList(ViewBag.programa, "IdPrograma", "Programa1"))
                     </div>
+
                 </div>
             </div>
             <div class="btnsC">
                 <button class="btnCS">Modificar</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
