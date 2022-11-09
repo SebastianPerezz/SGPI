@@ -32,7 +32,7 @@ namespace SGPI.Controllers
                 else if (usuario.IdRol == 3)
                 {
                     //Redirige a la vista de Estudiante
-                    return Redirect("Estudiante/ActualizarEstudiante");
+                    return Redirect("Estudiante/ActualizarEstudiante/?IdUsuario="+usuario.IdUsuario);
                 }
                 else {
                 }
